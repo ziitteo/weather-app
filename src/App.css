@@ -1,38 +1,290 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  position: relative;
+  font-family: 'Do hyeon', sans-serif;
+  background: url(https://cdn.pixabay.com/photo/2017/12/28/17/41/summer-3045780_960_720.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* common */
+.row-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.row-start-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.row-start-end {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.row-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.column-center {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.column-start {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* index */
+.main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -100;
+}
+
+.main.sunny {
+  background-image: linear-gradient(rgba(255, 228, 121, 0.3), rgba(255, 177, 251, 0.3)),
+    url(https://www.greenpostkorea.co.kr/news/photo/201709/80440_71364_407.jpg);
+}
+
+.main.cloud-sun {
+  background-image: linear-gradient(rgba(255, 228, 121, 0.3), rgba(255, 177, 251, 0.3)),
+    url(https://cdn.pixabay.com/photo/2017/12/28/17/41/summer-3045780_960_720.jpg);
+}
+
+.main.cloud {
+  background-image: linear-gradient(rgba(255, 228, 121, 0.3), rgba(255, 177, 251, 0.3)),
+    url(https://images.pexels.com/photos/5186955/pexels-photo-5186955.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+}
+
+.main.cloud-rain {
+  background-image: linear-gradient(rgba(255, 228, 121, 0.3), rgba(255, 177, 251, 0.3)),
+    url(https://st5.depositphotos.com/4351343/62824/v/600/depositphotos_628240948-stock-video-rain-drops-flow-glass-background.jpg);
+}
+
+.main.rain {
+  background-image: linear-gradient(rgba(255, 228, 121, 0.3), rgba(255, 177, 251, 0.3)),
+    url(https://www.greenpostkorea.co.kr/news/photo/201709/80440_71364_407.jpg);
+}
+
+.main.thunderstorm {
+  background-image: linear-gradient(rgba(255, 228, 121, 0.3), rgba(255, 177, 251, 0.3)),
+    url(https://flexible.img.hani.co.kr/flexible/normal/590/351/imgdb/resize/2008/1016/122403674847_20081016.JPG);
+}
+
+.main.snow {
+  background-image: linear-gradient(rgba(255, 228, 121, 0.3), rgba(255, 177, 251, 0.3)),
+    url(https://cdn.pixabay.com/photo/2018/07/08/10/11/a-snowy-day-3523618_1280.jpg);
+}
+
+.main.smog {
+  background-image: linear-gradient(rgba(255, 228, 121, 0.3), rgba(255, 177, 251, 0.3)),
+    url(https://i.namu.wiki/i/xdBkIIJvKRYX4KeNb6MnZCqnmXraYcf9eIXnmHW2ynNLiz1WAwGSFvYrzM--kJ1ewscU-fOn-WRfV1jCefCwsA.webp);
+}
+
+.main::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  opacity: 0.1;
+}
+
+.container {
+  height: 100vh;
+}
+
+/* Weather Box */
+.weather-box {
+  position: relative;
+  width: 500px;
+  height: 550px;
+  border-radius: 50px;
+  padding: 40px;
+  background-image: linear-gradient(rgba(255, 198, 249, 0.9), rgba(255, 248, 177, 0.9)),
+    linear-gradient(rgba(255, 198, 249, 0.6), rgba(255, 248, 177, 0.6));
+  color: #fff;
+  margin-bottom: 30px;
+  border: 5px solid transparent;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.weather-box .city {
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.weather-box .today {
+  margin-bottom: 20px;
+}
+
+.weather-box .temp {
+  width: 100%;
+  position: relative;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.weather-box h2 {
+  position: relative;
+  background-image: linear-gradient(to bottom, #ffffff, #f1f1f1);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.weather-box .temp .celsius {
+  position: relative;
+  font-size: 180px;
+  line-height: 0.75em;
+  margin-right: 40px;
+}
+
+.weather-box .temp .celsius::after {
+  position: absolute;
+  content: '°C';
+  font-size: 50px;
+  top: -45px;
+}
+
+.weather-box .temp .fahrenheit {
+  position: relative;
+  font-size: 55px;
+  margin-right: 25px;
+}
+
+.weather-box .temp .fahrenheit::after {
+  position: absolute;
+  content: '°F';
+  font-size: 20px;
+  top: 10px;
+}
+
+.weather-icon {
+  margin-bottom: 10px;
+}
+
+.weather-box .desc {
+  position: absolute;
+  font-size: 18px;
+  writing-mode: vertical-lr;
+  text-orientation: sideways;
+  right: 40px;
+  top: 120px;
+}
+
+.min-max {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 140px;
+  height: 45px;
+  font-size: 18px;
+  padding: 10px 15px;
+  border-radius: 30px;
+  border: 1px solid hsla(0, 0%, 100%, 0.668);
+  background-color: hsla(0, 0%, 60%, 0.153);
+  margin-bottom: 20px;
+}
+
+.min-max p {
+  margin: 0;
+  color: #fff;
+}
+
+.arrow {
+  font-size: 12px;
+  margin-right: 3px;
+}
+
+.forecast-box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 140px;
+  border-radius: 30px;
+  background-color: rgba(255, 198, 249, 0.4);
+  color: #fff;
+  border: 2px solid #ffffff76;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+/* WeatherButton */
+.button {
+  margin-right: 10px;
+}
+
+.button {
+  width: 120px;
+  height: 40px;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: rgba(255, 198, 249, 0.6);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #ffc6f9;
+  color: #ff7be2;
+}
+
+.button:active {
+  background-color: #ff7be2;
+  color: #fff;
+}
+
+.button.active {
+  background-color: #ff7be2;
+  color: #fff;
+}
+
+.week {
+  margin-bottom: 10px;
+}
+
+.weather-icon2 {
+  width: 20px;
+  height: 20px;
+}
+
+.icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ffffff60;
+  margin-bottom: 10px;
 }
