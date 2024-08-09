@@ -76,8 +76,8 @@ function App() {
   // 도시 목록
   const cities = ['Zurich', 'Stockholm', 'Auckland', 'Amsterdam'];
 
-  // API 키 (환경 변수에서 가져옴))
-  const API_KEY = process.env.REACT_APP_WEATHER_KEY;
+  // API 키 (OpenWeatherMap API 키)
+  const API_KEY = '0af02416e449870d3e5a347a66df225e';
 
   // 에러 처리 함수 (에러 발생시 메시지를 팝업에 출력)
   const errorRender = errorMessage => {
