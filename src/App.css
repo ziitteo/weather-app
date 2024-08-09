@@ -162,6 +162,8 @@ body {
 }
 
 .weather-box .temp .celsius {
+  width: 182px;
+  height: 136px;
   position: relative;
   font-size: 180px;
   line-height: 0.75em;
@@ -176,6 +178,8 @@ body {
 }
 
 .weather-box .temp .fahrenheit {
+  width: 94px;
+  height: 70px;
   position: relative;
   font-size: 55px;
   margin-right: 25px;
@@ -242,6 +246,7 @@ body {
 /* WeatherButton */
 .button {
   margin-right: 10px;
+  margin-bottom: 20px;
 }
 
 .button {
