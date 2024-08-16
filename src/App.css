@@ -164,10 +164,11 @@ body {
 }
 
 .weather-box .temp .celsius {
+  height: 100%;
   position: relative;
   font-size: 180px;
   line-height: 0.75em;
-  margin-right: 40px;
+  margin-right: 60px;
 }
 
 .weather-box .temp .celsius::after {
@@ -178,16 +179,15 @@ body {
 }
 
 .weather-box .temp .fahrenheit {
+  height: 100%;
   position: relative;
   font-size: 55px;
   margin-right: 25px;
 }
 
-.weather-box .temp .fahrenheit::after {
-  position: absolute;
-  content: '°F';
+.weather-box .temp .fahrenheit p {
+  position: relative;
   font-size: 20px;
-  left: 100px;
   bottom: 35px;
 }
 
