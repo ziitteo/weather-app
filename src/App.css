@@ -63,6 +63,7 @@ body {
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   z-index: -100;
 }
 
@@ -148,6 +149,7 @@ body {
 
 .weather-box .temp {
   width: 100%;
+  height: 136px;
   position: relative;
   font-size: 20px;
   margin-bottom: 20px;
@@ -162,8 +164,6 @@ body {
 }
 
 .weather-box .temp .celsius {
-  width: 182px;
-  height: 136px;
   position: relative;
   font-size: 180px;
   line-height: 0.75em;
@@ -178,8 +178,6 @@ body {
 }
 
 .weather-box .temp .fahrenheit {
-  width: 94px;
-  height: 70px;
   position: relative;
   font-size: 55px;
   margin-right: 25px;
@@ -189,7 +187,8 @@ body {
   position: absolute;
   content: '°F';
   font-size: 20px;
-  top: 10px;
+  left: 100px;
+  bottom: 35px;
 }
 
 .weather-icon {

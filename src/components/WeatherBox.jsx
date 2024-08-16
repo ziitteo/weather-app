@@ -134,7 +134,7 @@ const WeatherBox = ({ weather, forecast, timezone }) => {
       {/* 현재 온도 표시 */}
       <div className='temp row-start-end'>
         <span className='celsius'>{celsius}</span>
-        <span className='fahrenheit'> / {fahrenheit}</span>
+        <span className='fahrenheit row-start-end'> / {fahrenheit}</span>
       </div>
       {/* 날씨 상태 표시 */}
       <h3 className='desc'>
